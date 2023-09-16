@@ -1,6 +1,3 @@
-[![Image Alt Text](http://hallowed-corn.surge.sh/image.png)](http://hallowed-corn.surge.sh)
-
-
 
 
  The feature of my project
