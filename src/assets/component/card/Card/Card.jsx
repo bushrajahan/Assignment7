@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unknown-property */
-import PropTypes from 'prop-types';
 import { FaDollarSign } from 'react-icons/fa'
 import { FaBookOpen } from 'react-icons/fa';
 
-const Card = ({item}) => {
-  console.log(item)
+const Card = ({item,handleCard}) => {
+  // console.log(item)
   const {id,img,title,details,price,credit} = item;
   return (
     <div>
@@ -28,7 +27,7 @@ const Card = ({item}) => {
     
     </div>
     <div className="card-actions ">
-      <button className="btn  bg-blue-400 text-white w-full capitalize">Select</button>
+      <button className="btn  bg-blue-400 text-white w-full capitalize" onClick={()=>handleCard(item,id)}>Select</button>
     </div>
   </div>
 </div>
@@ -36,8 +35,6 @@ const Card = ({item}) => {
   );
 };
 
-Card.propTypes = {
-  
-};
+
 
 export default Card;
