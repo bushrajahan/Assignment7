@@ -59,8 +59,8 @@ function App() {
             });
           }
 
-          console.log(remeaningCredit)
-            console.log(count)
+          // console.log(remeaningCredit)
+            // console.log(count)
            setCount(count)
             setPrice(price)
             setCredit(remeaningCredit);
@@ -75,7 +75,7 @@ function App() {
     <>
     
       <h1 className='text-center text-bold'>Course Registation</h1>
-       <div className='flex flex-col md:flex-row gap-2'>
+       <div className='flex flex-col lg:flex-row gap-2'>
          <div className='md:w-9/12'>
             <Cards items ={items} handleCard={handleCard}></Cards>
          </div>

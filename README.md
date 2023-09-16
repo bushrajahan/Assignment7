@@ -4,7 +4,7 @@
 
 * Here's a section where your selected course Name, total credit hour, remaining credit hour, and total price are shown.
 
-The State management policy of my project:
+* The State management policy of my project:
 * First State: At first, I fetch the data in the App.jsx file, then I declare a state where I set this data and then pass this data to the Cards.jsx component to show the card.
 * Second State: Then I declare a state where I store selectedCard and using this state, I map the card and find the price and credit of the user.
 * Third State: In this state, I store the remaining credit of the user and also set an initial value of it and pass the stored value to the Partial.jsx component.

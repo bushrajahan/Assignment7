@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+
 
 const Selected = ({item,p}) => {
 
-//  console.log(item)
+//  console.log(item,p)
  const {title} =item;
   return (
     <div>
@@ -12,8 +11,6 @@ const Selected = ({item,p}) => {
   );
 };
 
-Selected.propTypes = {
-  
-};
+
 
 export default Selected;

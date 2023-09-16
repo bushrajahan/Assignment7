@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/no-unknown-property */
-import React from 'react';
 import Selected from './Selected/Selected';
 
 const Partial = ({price,count,credits,selectedCards}) => {

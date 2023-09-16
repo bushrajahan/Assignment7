@@ -8,7 +8,7 @@ const Cards = ({items,handleCard}) => {
   return (
        
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-7">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 mt-7">
         
       {
         items.map(item =>
