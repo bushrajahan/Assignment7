@@ -3,7 +3,7 @@
 import React from 'react';
 import Selected from './Selected/Selected';
 
-const Partial = ({count,credits,selectedCards}) => {
+const Partial = ({price,count,credits,selectedCards}) => {
   // console.log(selectedCards.length);
 let p=0;
 
@@ -17,6 +17,7 @@ let p=0;
       
       <div className="card-body">
         <h3 className='text-blue-400'>Credit Hour Remaining {credits} hr</h3>
+        <h2>Course Name</h2>
        {
         selectedCards.map(item=>
              
@@ -26,7 +27,7 @@ let p=0;
        }
        <h2 className='card-title'>Total Credit Hour : {count}</h2>
        <hr />
-       <h2 className='card-title'>Total Price : 48000 USD</h2>
+       <h2 className='card-title'>Total Price : {price} USD</h2>
       
       
   

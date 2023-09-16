@@ -11,7 +11,7 @@ function App() {
   const [selectedCards,setSelectedCards] = useState([]);
   const [credits,setCredit] = useState(20)
   const [count,setCount] = useState(0)
-  
+  const [price,setPrice] =useState(0)
   useEffect(()=>{
       fetch('data.json')
       .then(res => res.json())
@@ -20,6 +20,7 @@ function App() {
 
   const handleCard = (item) =>{
     // console.log(item)
+    let price = item.price;
     let  count =parseInt(item.credit.replace(/\D/g,'')); 
     const isExit = selectedCards.find(card => card.id === item.id )
     if(isExit){
@@ -35,13 +36,16 @@ function App() {
     
 
     else {
-
+   
+         
           {
-            selectedCards.forEach(card =>
-                
+            selectedCards.forEach(card =>{
                  count += parseInt(card.credit.replace(/\D/g,''))
+                   price +=card.price
+            }
               )
           }
+          // console.log(price)
           
            let remeaningCredit = 20 - count;
           if(remeaningCredit <0){
@@ -58,7 +62,7 @@ function App() {
           console.log(remeaningCredit)
             console.log(count)
            setCount(count)
-
+            setPrice(price)
             setCredit(remeaningCredit);
        const cards = [...selectedCards,item];
        setSelectedCards(cards)
@@ -77,7 +81,7 @@ function App() {
          </div>
          <div className=''>
         
-            <Partial count={count} credits = {credits} selectedCards = {selectedCards}></Partial>        
+            <Partial price={price} count={count} credits = {credits} selectedCards = {selectedCards}></Partial>        
        
    
     </div>
