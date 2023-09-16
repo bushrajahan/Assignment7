@@ -2,7 +2,7 @@
 * In my project, there are 9 courses and also there are a select button, price, credit, description, and title, and also contain an image of the relevant course.
 * Here, the total credit is 20, so you can select courses within this limit; otherwise, it will show a React toast.
 
-Here's a section where your selected course Name, total credit hour, remaining credit hour, and total price are shown.
+* Here's a section where your selected course Name, total credit hour, remaining credit hour, and total price are shown.
 
 The State management policy of my project:
 * First State: At first, I fetch the data in the App.jsx file, then I declare a state where I set this data and then pass this data to the Cards.jsx component to show the card.
