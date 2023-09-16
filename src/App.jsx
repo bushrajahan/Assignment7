@@ -2,13 +2,16 @@ import { useEffect, useState } from "react";
 import './App.css'
 import Cards from './assets/component/card/Cards'
 import Partial from './assets/component/card/Partial/Partial'
-import { Toast } from "react-toastify/dist/components";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   
   const [items,setItem] = useState([])
   const [selectedCards,setSelectedCards] = useState([]);
   const [credits,setCredit] = useState(20)
+  const [count,setCount] = useState(0)
+  
   useEffect(()=>{
       fetch('data.json')
       .then(res => res.json())
@@ -20,7 +23,14 @@ function App() {
     let  count =parseInt(item.credit.replace(/\D/g,'')); 
     const isExit = selectedCards.find(card => card.id === item.id )
     if(isExit){
-       alert('hello world')
+       return toast.warn("The data is already Exist", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 5000, // Time in milliseconds
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
     
 
@@ -32,13 +42,20 @@ function App() {
                  count += parseInt(card.credit.replace(/\D/g,''))
               )
           }
-
-          let remeaningCredit = 20 - count;
-
-          if(remeaningCredit <=0){
-            alert('credit hour is ends');
-          }
+           setCount(count)
           
+           let remeaningCredit = 20 - count;
+          if(remeaningCredit <0){
+            return toast.warn("Oops !! Credit is Empty", {
+              position: toast.POSITION.TOP_CENTER,
+              autoClose: 5000, // Time in milliseconds
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            });
+          }
+
           console.log(remeaningCredit)
             console.log(count)
             setCredit(remeaningCredit);
@@ -59,7 +76,7 @@ function App() {
          </div>
          <div className=''>
         
-            <Partial credits = {credits} selectedCards = {selectedCards}></Partial>        
+            <Partial count={count} credits = {credits} selectedCards = {selectedCards}></Partial>        
        
    
     </div>

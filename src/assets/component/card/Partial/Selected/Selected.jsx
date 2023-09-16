@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Selected = ({item}) => {
   return (
     <div>
-      
+      <p>{}</p>
     </div>
   );
 };

@@ -3,7 +3,7 @@
 import React from 'react';
 import Selected from './Selected/Selected';
 
-const Partial = ({credits,selectedCards}) => {
+const Partial = ({count,credits,selectedCards}) => {
   // console.log(selectedCards.length);
   
   
@@ -22,7 +22,8 @@ const Partial = ({credits,selectedCards}) => {
 
         )
        }
-       
+       <h2 className='card-title'>Total Credit Hour : {count}</h2>
+       <hr />
        <h2 className='card-title'>Total Price : 48000 USD</h2>
       
       
