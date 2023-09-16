@@ -38,11 +38,10 @@ function App() {
 
           {
             selectedCards.forEach(card =>
-              
+                
                  count += parseInt(card.credit.replace(/\D/g,''))
               )
           }
-           setCount(count)
           
            let remeaningCredit = 20 - count;
           if(remeaningCredit <0){
@@ -58,6 +57,8 @@ function App() {
 
           console.log(remeaningCredit)
             console.log(count)
+           setCount(count)
+
             setCredit(remeaningCredit);
        const cards = [...selectedCards,item];
        setSelectedCards(cards)

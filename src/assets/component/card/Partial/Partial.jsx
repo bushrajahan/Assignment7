@@ -5,7 +5,8 @@ import Selected from './Selected/Selected';
 
 const Partial = ({count,credits,selectedCards}) => {
   // console.log(selectedCards.length);
-  
+let p=0;
+
   
   return (
   
@@ -18,7 +19,8 @@ const Partial = ({count,credits,selectedCards}) => {
         <h3 className='text-blue-400'>Credit Hour Remaining {credits} hr</h3>
        {
         selectedCards.map(item=>
-            <Selected key={item.id} item={item}></Selected>
+             
+            <Selected key={item.id} p ={++p} item={item}></Selected>
 
         )
        }
