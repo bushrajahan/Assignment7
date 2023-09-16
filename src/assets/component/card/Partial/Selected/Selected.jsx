@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Selected = ({item,p}) => {
- console.log(item)
+
+//  console.log(item)
  const {title} =item;
   return (
     <div>
