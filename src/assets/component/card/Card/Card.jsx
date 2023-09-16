@@ -1,21 +1,34 @@
 /* eslint-disable react/no-unknown-property */
-
 import PropTypes from 'prop-types';
+import { FaDollarSign } from 'react-icons/fa'
+import { FaBookOpen } from 'react-icons/fa';
 
 const Card = ({item}) => {
   console.log(item)
+  const {id,img,title,details,price,credit} = item;
   return (
     <div>
       
-      <div className="card w-96 bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10">
-    <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" />
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions">
-      <button className="btn btn-primary">Buy Now</button>
+      <div className="card  bg-base-100 shadow-xl ">
+  <figure><img src={img} alt="language" className="w-full h-64" /></figure>
+  <div className="card-body">
+    <h2 className="card-title">{title}</h2>
+    <p>{details}</p>
+     <div className="flex justify-between">
+        <div >
+          <p className='flex justify-center items-center gap-2'><FaDollarSign /> Price: {price}</p>
+        </div>
+        <div >
+          <p className='flex justify-center items-center gap-2'> <FaBookOpen/>  credit: {credit}</p>
+        </div>
+        
+     </div>
+     
+    <div>
+    
+    </div>
+    <div className="card-actions ">
+      <button className="btn  bg-blue-400 text-white w-full capitalize">Select</button>
     </div>
   </div>
 </div>

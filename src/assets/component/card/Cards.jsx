@@ -12,13 +12,15 @@ const Cards = () => {
   return (
        
     <div>
-      <p>{items.length}</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-7">
       {
         items.map(item =>
-          <Card item ={item}></Card>
+    
+          <Card key={item.id} item ={item}></Card>
           )
       }
       
+    </div>
     </div>
   );
 };
